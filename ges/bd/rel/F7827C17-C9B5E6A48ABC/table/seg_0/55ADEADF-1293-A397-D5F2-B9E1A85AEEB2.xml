@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="55ADEADF-1293-A397-D5F2-B9E1A85AEEB2" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="RAPPORT">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>RAPPORT</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_RAPPORT" id="2A02EE8D-24E1-E658-2129-D471E1CF65D7">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>RAPPORT</sourceObjSchema>
+<sourceObjName>ID_RAPPORT</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM_UNIV" id="B1417F2E-0187-5475-7F57-CCA533532D3C">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>RAPPORT</sourceObjSchema>
+<sourceObjName>NOM_UNIV</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATE_CREATION" id="8B91B910-52B2-D93D-AC6D-B09DC8FCD7DA">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>RAPPORT</sourceObjSchema>
+<sourceObjName>DATE_CREATION</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM_RAPPORT" id="D8F28F9C-454A-5183-C3B2-CADF4EDCA2B3">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>RAPPORT</sourceObjSchema>
+<sourceObjName>NOM_RAPPORT</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RQPPORT" id="2E1BB3B5-7734-C323-6721-9091D7052E15">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>RAPPORT</sourceObjSchema>
+<sourceObjName>RQPPORT</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_U" id="B4B8010E-FE61-1316-479D-D4BC56F627B8">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>RAPPORT</sourceObjSchema>
+<sourceObjName>ID_U</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="257A9836-6D76-AC80-9512-296DDB416F33" referredColumn="DDBF1280-8BB7-8C80-ACD8-F077B1AF4E42"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="193CDFD4-590F-B6A6-F8A0-B7B767C7BDB7" name="RQPPORT_PK">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>RQPPORT_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A02EE8D-24E1-E658-2129-D471E1CF65D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7274FF81-CB66-59E6-4AD5-17E59C1A167A" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="RQPPORT_PK">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>RQPPORT_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A02EE8D-24E1-E658-2129-D471E1CF65D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5662BF38-8452-3BDF-B6CE-CE9D260F2ABD" name="ID_U">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B4B8010E-FE61-1316-479D-D4BC56F627B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

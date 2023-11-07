@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0AF5F239-46D9-B43F-9B20-4971DF2A98D0" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="CONTROLEv1">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>CONTROLE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_E" id="0797219F-358E-3018-2EF9-41DBD84A3B9A">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>CONTROLEv1</sourceObjSchema>
+<sourceObjName>ID_E</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="67B6863F-1BCA-CFCE-5AC5-118DAA5C2293" referredColumn="BC9960D6-01DD-90F7-6A81-F4752F7B1AD6"/>
+</associations>
+</Column>
+<Column name="ID_U" id="D2F6CB05-F698-37F9-F955-C1B326C118C5">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>CONTROLEv1</sourceObjSchema>
+<sourceObjName>ID_U</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B0EE6EF3-2845-B194-ACEE-4292B84E4DA3" referredColumn="DDBF1280-8BB7-8C80-ACD8-F077B1AF4E42"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DB190C42-3EA8-60D8-2611-17CE16D13936" name="CONTROLE_PKv1">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>CONTROLE_PKv1</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0797219F-358E-3018-2EF9-41DBD84A3B9A"/>
+<colUsage columnID="D2F6CB05-F698-37F9-F955-C1B326C118C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="96D16D03-1938-4025-3959-EF4F1B845078" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="CONTROLE_PKv1">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>CONTROLE_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0797219F-358E-3018-2EF9-41DBD84A3B9A"/>
+<colUsage columnID="D2F6CB05-F698-37F9-F955-C1B326C118C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="084451B1-E9C4-2BB0-3181-B6BE34CE6691" name="ID_E">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0797219F-358E-3018-2EF9-41DBD84A3B9A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3CB2E443-DAEC-53F6-B3CD-3EC44DCC2A8A" name="ID_U_FK">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D2F6CB05-F698-37F9-F955-C1B326C118C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

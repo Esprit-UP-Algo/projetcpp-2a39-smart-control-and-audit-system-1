@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="UNIVERSITE" directorySegmentName="seg_0" id="93B65364-E7EA-B684-B150-3EF664F5418A">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E16E11AA-9E1B-AB09-F0F0-458C5ABE06E0</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="BUDGET_ANNUELLE" id="1E9B7652-4928-5E6F-01F2-A0A5DBFEC60C">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOM" id="238766EC-594C-60D0-C5B5-86A514B0F3D8">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DATE_VISITE" id="8C149049-4653-1B36-B282-6FECBC164A0A">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ADRESSE" id="91C7C911-C787-492D-16EB-92F212EACF6F">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_U" id="DDBF1280-8BB7-8C80-ACD8-F077B1AF4E42">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NB_ETUDIANT" id="FE5095FA-4FD1-AC0E-AD15-5477EE40660F">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="UNIVERSITE_PK" id="76B0A0A7-4F6D-C11A-EE2E-6F20203EF870">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="UNIVERSITE_PK" id="9FDA0763-A248-1C57-6F5E-3A4D41F725C2">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<existingIndex>76B0A0A7-4F6D-C11A-EE2E-6F20203EF870</existingIndex>
+<indexSegment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="FOURNIS" directorySegmentName="seg_0" id="E10CC5AC-ED33-2D57-881F-856A941F88F8">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:22 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nameChanged>true</nameChanged>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E16E11AA-9E1B-AB09-F0F0-458C5ABE06E0</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_U" id="0414A7F4-017B-33AE-1A40-4724F084DD50">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:22 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NUMERO" id="9022F202-FDE9-95BF-2F84-EF37BC45014A">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:22 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="FOURNIS_PKv1" id="93E1266E-60F0-4968-D805-5268C4D13EFA">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:22 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ID_U_FKKv1" id="885513B6-E67C-8878-3938-EF0526CCED86">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:22 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="NUMERO_FKv1" id="C3DDB7A7-7EEE-5AC9-EACF-E2FBA6BAED54">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:22 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="FOURNIS_PKv1" id="954D9FD5-59EB-AED4-B087-618D9552EEB2">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:22 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="FAIRE" directorySegmentName="seg_0" id="B25FDD2D-BABB-FEE6-9F5B-A7BACDC70AB0">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:14 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E16E11AA-9E1B-AB09-F0F0-458C5ABE06E0</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_E" id="48018089-1E83-CA67-40D6-7DD82AC40E0C">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:14 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_F" id="924CF641-C7B4-0A52-A388-4D118B1D46B3">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:14 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="FAIRE_PK" id="1EFF191A-EAFC-0E12-D6B0-1DBEBCDFEC03">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:14 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ID_F_FK" id="AA60F105-FD8B-5A26-20D6-020BC46E075D">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:14 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ID_E_FK" id="EA1DF0F6-5EA0-C333-166B-3F4F91ECB274">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:14 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="FAIRE_PK" id="7B894DAB-C2C0-D32C-D08A-E2ED569B30F9">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:14 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<existingIndex>1EFF191A-EAFC-0E12-D6B0-1DBEBCDFEC03</existingIndex>
+<indexSegment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="CONTROLE" directorySegmentName="seg_0" id="0AF5F239-46D9-B43F-9B20-4971DF2A98D0">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nameChanged>true</nameChanged>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E16E11AA-9E1B-AB09-F0F0-458C5ABE06E0</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_E" id="0797219F-358E-3018-2EF9-41DBD84A3B9A">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_U" id="D2F6CB05-F698-37F9-F955-C1B326C118C5">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="CONTROLE_PKv1" id="96D16D03-1938-4025-3959-EF4F1B845078">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ID_Ev1" id="084451B1-E9C4-2BB0-3181-B6BE34CE6691">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ID_U_FKv1" id="3CB2E443-DAEC-53F6-B3CD-3EC44DCC2A8A">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CONTROLE_PKv1" id="DB190C42-3EA8-60D8-2611-17CE16D13936">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:45 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

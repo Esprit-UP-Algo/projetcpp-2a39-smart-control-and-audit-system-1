@@ -1,0 +1,175 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="637910C5-C114-67B3-C2F2-938DFDCE2398" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="EMPLOYE">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>EMPLOYE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_E" id="BC9960D6-01DD-90F7-6A81-F4752F7B1AD6">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>EMPLOYE</sourceObjSchema>
+<sourceObjName>ID_E</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM" id="01B5E86A-CCB8-7256-B048-77663FB031AF">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>EMPLOYE</sourceObjSchema>
+<sourceObjName>NOM</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRENOM" id="A46EDFD6-A362-1D72-342C-D890F405EF0C">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>EMPLOYE</sourceObjSchema>
+<sourceObjName>PRENOM</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATE_ENTRE" id="BE30CD7E-C8B6-74E6-0E9E-020EF6D8CFB6">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>EMPLOYE</sourceObjSchema>
+<sourceObjName>DATE_ENTRE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALAIRE" id="D65749BC-7AA5-488F-C029-B91376BD7AF3">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>EMPLOYE</sourceObjSchema>
+<sourceObjName>SALAIRE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POSTE" id="9CEF2690-DC74-3DD8-A59E-CCE67E329650">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>EMPLOYE</sourceObjSchema>
+<sourceObjName>POSTE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="C419F8D9-B287-1585-41AE-9E166675308B">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>EMPLOYE</sourceObjSchema>
+<sourceObjName>EMAIL</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUM" id="2460D3DD-4808-77DF-3C53-95E3AA53B53D">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>EMPLOYE</sourceObjSchema>
+<sourceObjName>NUM</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADRESSE_EMPLOYE" id="20F67B63-2C8E-81F8-1B59-FF9F43783ECD">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>EMPLOYE</sourceObjSchema>
+<sourceObjName>ADRESSE_EMPLOYE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5E347784-A7D9-9D5E-692B-8B19288CA98B" name="EMPLOYE_PK">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>EMPLOYE_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC9960D6-01DD-90F7-6A81-F4752F7B1AD6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FD3B10BA-A1F2-3A7F-89D5-97E7AD0FD193" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="EMPLOYE_PK">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>EMPLOYE_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:11 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC9960D6-01DD-90F7-6A81-F4752F7B1AD6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

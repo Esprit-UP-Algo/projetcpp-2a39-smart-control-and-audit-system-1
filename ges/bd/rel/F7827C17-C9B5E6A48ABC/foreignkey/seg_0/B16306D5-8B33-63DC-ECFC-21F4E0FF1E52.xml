@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B16306D5-8B33-63DC-ECFC-21F4E0FF1E52" containerWithKeyObject="E10CC5AC-ED33-2D57-881F-856A941F88F8" localFKIndex="885513B6-E67C-8878-3938-EF0526CCED86" name="ID_U_FKKv1">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>ID_U_FKK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:22 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<referredTableLongName>SELIM.UNIVERSITE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>93B65364-E7EA-B684-B150-3EF664F5418A</referredTableID>
+<keyObject>9FDA0763-A248-1C57-6F5E-3A4D41F725C2</keyObject>
+<referredKeyID>9FDA0763-A248-1C57-6F5E-3A4D41F725C2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_U</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

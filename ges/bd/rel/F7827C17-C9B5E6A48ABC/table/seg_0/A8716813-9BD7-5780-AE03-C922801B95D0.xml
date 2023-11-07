@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A8716813-9BD7-5780-AE03-C922801B95D0" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="FORMATION">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>FORMATION</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_F" id="E0B5EA34-1A27-9B62-4327-6C99D9BEF2EB">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>FORMATION</sourceObjSchema>
+<sourceObjName>ID_F</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM_FORMATION" id="3FB8BCBD-6798-0D2B-4645-3ECA58597E4C">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>FORMATION</sourceObjSchema>
+<sourceObjName>NOM_FORMATION</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM_FORMATEUR" id="FD672C93-0F0E-D74A-6480-DF91A58E1DF5">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>FORMATION</sourceObjSchema>
+<sourceObjName>NOM_FORMATEUR</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPE_FORMATION" id="1D7FBC07-78DB-9065-9E0A-3C1541796CD9">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>FORMATION</sourceObjSchema>
+<sourceObjName>TYPE_FORMATION</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DURE_FORMATION" id="45B3F574-3D2B-FCEC-DC57-85A247B59E38">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>FORMATION</sourceObjSchema>
+<sourceObjName>DURE_FORMATION</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMPLOYEE" id="5BA87400-D774-6A23-20CB-9A9793BAB61C">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>FORMATION</sourceObjSchema>
+<sourceObjName>EMPLOYEE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DAATE_FORATION" id="F1A9D275-EEDB-A0B2-1E5B-B9DBE7DBE1F7">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>FORMATION</sourceObjSchema>
+<sourceObjName>DAATE_FORATION</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F86BBC25-160D-5085-8671-EF4C2D39D94F" name="FORMATION_PK">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>FORMATION_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0B5EA34-1A27-9B62-4327-6C99D9BEF2EB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4589C1D8-46B8-4C1E-91CC-031B821D6AB9" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="FORMATION_PK">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>FORMATION_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0B5EA34-1A27-9B62-4327-6C99D9BEF2EB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

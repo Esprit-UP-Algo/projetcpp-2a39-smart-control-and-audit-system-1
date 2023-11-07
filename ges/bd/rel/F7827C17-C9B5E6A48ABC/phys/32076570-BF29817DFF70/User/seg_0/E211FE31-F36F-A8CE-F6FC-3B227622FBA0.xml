@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="SELIM" directorySegmentName="seg_0" id="E211FE31-F36F-A8CE-F6FC-3B227622FBA0">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjName>SELIM</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<defTableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</defTableSpace>
+<privileges>UNLIMITED TABLESPACE</privileges>
+</UserOraclev10g>

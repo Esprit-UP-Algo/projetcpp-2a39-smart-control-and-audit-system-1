@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="CONTROLE" directorySegmentName="seg_0" id="0AACF8D0-9E0E-57F2-9556-3B52DA870DA4">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:08 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E16E11AA-9E1B-AB09-F0F0-458C5ABE06E0</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_U" id="1D737A35-DBE0-7AA1-30D8-CDC7D732C44A">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:08 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_E" id="AB953573-5AB1-EE99-7707-9CF236DF130B">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:08 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="CONTROLE_PK" id="04513BFA-DEB4-3F2C-C74D-32CF193D1429">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:08 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ID_E" id="07667A32-03E3-5399-9C0A-C49D7D32F50F">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:09 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ID_U_FK" id="9686ACB4-61A2-C716-DFB3-62389451BAD9">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:09 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CONTROLE_PK" id="B22DB254-762F-BC7F-DF98-C6283E87D9CA">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:08 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<existingIndex>04513BFA-DEB4-3F2C-C74D-32CF193D1429</existingIndex>
+<indexSegment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

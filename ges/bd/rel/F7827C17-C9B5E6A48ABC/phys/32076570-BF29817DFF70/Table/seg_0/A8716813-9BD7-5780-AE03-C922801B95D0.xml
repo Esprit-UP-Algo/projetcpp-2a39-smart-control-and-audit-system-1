@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="FORMATION" directorySegmentName="seg_0" id="A8716813-9BD7-5780-AE03-C922801B95D0">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E16E11AA-9E1B-AB09-F0F0-458C5ABE06E0</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="TYPE_FORMATION" id="1D7FBC07-78DB-9065-9E0A-3C1541796CD9">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOM_FORMATION" id="3FB8BCBD-6798-0D2B-4645-3ECA58597E4C">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DURE_FORMATION" id="45B3F574-3D2B-FCEC-DC57-85A247B59E38">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMPLOYEE" id="5BA87400-D774-6A23-20CB-9A9793BAB61C">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_F" id="E0B5EA34-1A27-9B62-4327-6C99D9BEF2EB">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DAATE_FORATION" id="F1A9D275-EEDB-A0B2-1E5B-B9DBE7DBE1F7">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOM_FORMATEUR" id="FD672C93-0F0E-D74A-6480-DF91A58E1DF5">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="FORMATION_PK" id="4589C1D8-46B8-4C1E-91CC-031B821D6AB9">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="FORMATION_PK" id="F86BBC25-160D-5085-8671-EF4C2D39D94F">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:17 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<existingIndex>4589C1D8-46B8-4C1E-91CC-031B821D6AB9</existingIndex>
+<indexSegment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

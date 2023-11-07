@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="RAPPORT" directorySegmentName="seg_0" id="55ADEADF-1293-A397-D5F2-B9E1A85AEEB2">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E16E11AA-9E1B-AB09-F0F0-458C5ABE06E0</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_RAPPORT" id="2A02EE8D-24E1-E658-2129-D471E1CF65D7">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RQPPORT" id="2E1BB3B5-7734-C323-6721-9091D7052E15">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DATE_CREATION" id="8B91B910-52B2-D93D-AC6D-B09DC8FCD7DA">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOM_UNIV" id="B1417F2E-0187-5475-7F57-CCA533532D3C">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_U" id="B4B8010E-FE61-1316-479D-D4BC56F627B8">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOM_RAPPORT" id="D8F28F9C-454A-5183-C3B2-CADF4EDCA2B3">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="RQPPORT_PK" id="7274FF81-CB66-59E6-4AD5-17E59C1A167A">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ID_U" id="5662BF38-8452-3BDF-B6CE-CE9D260F2ABD">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="RQPPORT_PK" id="193CDFD4-590F-B6A6-F8A0-B7B767C7BDB7">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:06:54 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<existingIndex>7274FF81-CB66-59E6-4AD5-17E59C1A167A</existingIndex>
+<indexSegment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

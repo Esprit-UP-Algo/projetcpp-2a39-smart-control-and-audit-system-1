@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="93B65364-E7EA-B684-B150-3EF664F5418A" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="UNIVERSITE">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>UNIVERSITE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_U" id="DDBF1280-8BB7-8C80-ACD8-F077B1AF4E42">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>UNIVERSITE</sourceObjSchema>
+<sourceObjName>ID_U</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM" id="238766EC-594C-60D0-C5B5-86A514B0F3D8">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>UNIVERSITE</sourceObjSchema>
+<sourceObjName>NOM</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADRESSE" id="91C7C911-C787-492D-16EB-92F212EACF6F">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>UNIVERSITE</sourceObjSchema>
+<sourceObjName>ADRESSE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATE_VISITE" id="8C149049-4653-1B36-B282-6FECBC164A0A">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>UNIVERSITE</sourceObjSchema>
+<sourceObjName>DATE_VISITE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_ETUDIANT" id="FE5095FA-4FD1-AC0E-AD15-5477EE40660F">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>UNIVERSITE</sourceObjSchema>
+<sourceObjName>NB_ETUDIANT</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUDGET_ANNUELLE" id="1E9B7652-4928-5E6F-01F2-A0A5DBFEC60C">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>UNIVERSITE</sourceObjSchema>
+<sourceObjName>BUDGET_ANNUELLE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9FDA0763-A248-1C57-6F5E-3A4D41F725C2" name="UNIVERSITE_PK">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>UNIVERSITE_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDBF1280-8BB7-8C80-ACD8-F077B1AF4E42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="76B0A0A7-4F6D-C11A-EE2E-6F20203EF870" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="UNIVERSITE_PK">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>UNIVERSITE_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:24 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDBF1280-8BB7-8C80-ACD8-F077B1AF4E42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

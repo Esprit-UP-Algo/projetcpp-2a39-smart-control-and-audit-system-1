@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="CERTIFECAT" directorySegmentName="seg_0" id="F01D07CC-6B01-D72C-00A4-124234EFA140">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E16E11AA-9E1B-AB09-F0F0-458C5ABE06E0</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DOMAINE" id="3A19E80D-1ED8-A6BF-6AEC-787C0E1FDF5F">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NUMERO" id="499DF770-C059-58DE-46F6-3396DD5500FE">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REFERENTIEL" id="73B45A58-0163-CB25-31E7-338EBDEDD73F">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="VALIDITE" id="8FC3141F-B797-95CA-2781-A911EF7BE946">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DATE_VALIDITE" id="BDDFA5F0-49A3-1262-BB2B-D74AB87C9CEB">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TITULAIRE" id="C7CDBB1D-E9A4-03A5-946B-FD6D2A7F1EFB">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SIGNIATIARE" id="F5F9AF4D-293C-BF27-8330-67969254F0AA">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="CERTIFECAT_PK1" id="4204C811-EF4E-40B9-9837-783AA09CDDD0">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<schemaObject>7B52D462-689B-B2B1-6AFD-E796ADC69824</schemaObject>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CERTIFECAT_PK" id="ACDEA0F2-A981-3270-338A-E59F80DDB0F2">
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<segment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</segment>
+<tableSpace>7E9FDE7B-39A0-5E23-438C-A3D731BA3439</tableSpace>
+<existingIndex>4204C811-EF4E-40B9-9837-783AA09CDDD0</existingIndex>
+<indexSegment>E8FF0A02-0D27-09AF-85FE-BC2D15B11A0A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

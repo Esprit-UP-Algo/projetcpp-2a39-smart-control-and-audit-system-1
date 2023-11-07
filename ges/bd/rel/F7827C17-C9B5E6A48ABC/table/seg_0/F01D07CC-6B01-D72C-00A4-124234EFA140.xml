@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F01D07CC-6B01-D72C-00A4-124234EFA140" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="CERTIFECAT">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>CERTIFECAT</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DATE_VALIDITE" id="BDDFA5F0-49A3-1262-BB2B-D74AB87C9CEB">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>CERTIFECAT</sourceObjSchema>
+<sourceObjName>DATE_VALIDITE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REFERENTIEL" id="73B45A58-0163-CB25-31E7-338EBDEDD73F">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>CERTIFECAT</sourceObjSchema>
+<sourceObjName>REFERENTIEL</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUMERO" id="499DF770-C059-58DE-46F6-3396DD5500FE">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>CERTIFECAT</sourceObjSchema>
+<sourceObjName>NUMERO</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TITULAIRE" id="C7CDBB1D-E9A4-03A5-946B-FD6D2A7F1EFB">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>CERTIFECAT</sourceObjSchema>
+<sourceObjName>TITULAIRE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DOMAINE" id="3A19E80D-1ED8-A6BF-6AEC-787C0E1FDF5F">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>CERTIFECAT</sourceObjSchema>
+<sourceObjName>DOMAINE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VALIDITE" id="8FC3141F-B797-95CA-2781-A911EF7BE946">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>CERTIFECAT</sourceObjSchema>
+<sourceObjName>VALIDITE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SIGNIATIARE" id="F5F9AF4D-293C-BF27-8330-67969254F0AA">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>CERTIFECAT</sourceObjSchema>
+<sourceObjName>SIGNIATIARE</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ACDEA0F2-A981-3270-338A-E59F80DDB0F2" name="CERTIFECAT_PK">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>CERTIFECAT_PK</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="499DF770-C059-58DE-46F6-3396DD5500FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4204C811-EF4E-40B9-9837-783AA09CDDD0" schemaObject="7B52D462-689B-B2B1-6AFD-E796ADC69824" name="CERTIFECAT_PK1">
+<sourceConnName>Source_Projet2A</sourceConnName>
+<sourceObjSchema>SELIM</sourceObjSchema>
+<sourceObjName>CERTIFECAT_PK1</sourceObjName>
+<createdBy>M S I</createdBy>
+<createdTime>2023-10-24 11:02:06 UTC</createdTime>
+<ownerDesignName>bd</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="499DF770-C059-58DE-46F6-3396DD5500FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
