@@ -1,3 +1,4 @@
+QT += core serialport
 QT       += core gui sql
 QT       += sql
 QT       += printsupport
@@ -23,6 +24,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 CONFIG += console
 SOURCES += \
+    arduino.cpp \
     formateur.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -34,6 +36,7 @@ SOURCES += \
     trier.cpp
 
 HEADERS += \
+    arduino.h \
     formateur.h \
         mainwindow.h \
     connection.h \

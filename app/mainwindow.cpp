@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include"arduino.h"
 
 
 
@@ -48,12 +48,23 @@ void MainWindow::on_pushButton_ajouter_clicked()
     NOM_FORMATION=ui->nomf_ajouter->text();
     NOM_FORMATEUR=ui->nomff_ajouter->text();
 
-
+    QRegularExpression ID_FRegex("^[a-zA-Z0-9]{8}$");
+     QRegularExpression referenceRegex("^[a-zA-Z]{1,10}$");
     formation f(ID_F, TYPE_FORMATION, NOM_FORMATION, NOM_FORMATEUR);
+
     bool test=f.ajouter();
     if (test)
     {
         messageBox.information(nullptr, messageBox.tr("Succès"), messageBox.tr("Ajout effectué"));
+        A.write_to_arduino("ajout de l'id "+ID_F);
+                   QSqlQuery query;
+                   query.prepare("INSERT INTO LCD (message, datemess) " "VALUES (:message, :datemess)");
+                   query.bindValue(":message", "ajout de id:"+ID_F);
+                   query.bindValue(":datemess", QDateTime::currentDateTime());
+                   query.exec();
+                   popUp->setPopupText("Ajout effectué");
+
+                   popUp->show();
     }
      else
         messageBox.critical(nullptr, messageBox.tr("Echec"), messageBox.tr("Ajout non effectué"));
@@ -82,13 +93,21 @@ void MainWindow::on_modifier_clicked()
     NOM_FORMATION=ui->nomf_modifier->text();
     NOM_FORMATEUR=ui->nomff_modifier->text();
 
-
     formation f(ID_F, TYPE_FORMATION, NOM_FORMATION, NOM_FORMATEUR);
 
     bool test1=f.modifier();
     if (test1)
     {
         messageBox.information(nullptr, messageBox.tr("Succès"), messageBox.tr("modification effectuée"));
+        A.write_to_arduino("Modif de l'id"+ID_F);
+               QSqlQuery query;
+               query.prepare("INSERT INTO LCD (message) " "VALUES (:message)");
+               query.bindValue(":message", " "+ID_F);
+
+               query.exec();
+               popUp->setPopupText("modifier effectué");
+
+               popUp->show();
     }
      else
         messageBox.critical(nullptr, messageBox.tr("Echec"), messageBox.tr("Ajout non effectué"));
@@ -144,6 +163,15 @@ void MainWindow::on_supprimer_clicked()
     if (test)
     {
         messageBox.information(nullptr, messageBox.tr("Succès"), messageBox.tr("Suppression effectuée"));
+        A.write_to_arduino("supp de l'id "+ID_F);
+               QSqlQuery query;
+               query.prepare("INSERT INTO LCD (message) " "VALUES (:message)");
+               query.bindValue(":message", "supprission de "+ID_F);
+
+               query.exec();
+               popUp->setPopupText("suppression effectué");
+
+               popUp->show();
     }
      else
         messageBox.critical(nullptr, messageBox.tr("Echec"), messageBox.tr("Suppression non effectuée"));
@@ -168,7 +196,12 @@ void MainWindow::on_reset_clicked()
                 ui->tableView_ajouter->setModel(E1.afficher());
                 ui->tableView_modifier->setModel(E1.afficher());
                 ui->tableView_supprimer->setModel(E1.afficher());
+                A.write_to_arduino("reset done :=) ");
+                       QSqlQuery query;
+                       query.prepare("INSERT INTO LCD (message) " "VALUES (:message)");
+                       query.bindValue(":message", "supprission de ");
 
+                       query.exec();
                }
             else
                 msgBox.setText("Echec du reset.!!!");
@@ -222,6 +255,12 @@ void MainWindow::on_pushButton_ajouter_4_clicked()
         else
         {
             msgbox.setText("erreur req sql");
+            A.write_to_arduino("Welcome ");
+                   QSqlQuery query;
+                   query.prepare("INSERT INTO LCD (message) " "VALUES (:message)");
+                   query.bindValue(":message", "supprission de ");
+
+                   query.exec();
                     msgbox.exec();
                     ui->C->show();
                     ui->stackedWidget->hide();

@@ -6,6 +6,7 @@
 #include "connection.h"
 #include<QMessageBox>
 #include <iostream>
+#include <QDateTime>
 
 #include <QSortFilterProxyModel>
 #include <QTextTableFormat>
@@ -38,8 +39,8 @@
 #include "qrcodegen.h"
 #include<formateur.h>
 #include "popup.h"
-
 #include <QMainWindow>
+#include"arduino.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -73,6 +74,7 @@ private:
     Ui::MainWindow *ui;
  PopUp *popUp;
     formation Etmp , f;
+Arduino A;
 };
 
 
