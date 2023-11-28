@@ -27,7 +27,7 @@
      <string notr="true">background-image: url(:/image_fond.jpg);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -43,7 +43,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_9">
        <attribute name="title">
@@ -758,6 +758,19 @@
          <pixmap>../../Downloads/fond-texture-mur-peint-blanc.jpg</pixmap>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton_refresh">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>10</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Rafraichir</string>
+        </property>
+       </widget>
        <zorder>label_12</zorder>
        <zorder>label_92</zorder>
        <zorder>tab_universite</zorder>
@@ -765,6 +778,7 @@
        <zorder>label_10</zorder>
        <zorder>cb_tri</zorder>
        <zorder>pb_excel_2</zorder>
+       <zorder>pushButton_refresh</zorder>
       </widget>
      </widget>
     </widget>
@@ -782,44 +796,18 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
-        <string>SMS</string>
+        <string>Mailing</string>
        </attribute>
-       <widget class="QPushButton" name="SMSsent">
-        <property name="geometry">
-         <rect>
-          <x>470</x>
-          <y>400</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Annuler</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="sendSMS">
-        <property name="geometry">
-         <rect>
-          <x>330</x>
-          <y>400</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Envoyer</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_13">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>-10</y>
-          <width>1081</width>
+          <x>-220</x>
+          <y>-100</y>
+          <width>1121</width>
           <height>611</height>
          </rect>
         </property>
@@ -830,9 +818,162 @@
          <pixmap>../../Downloads/fond-texture-mur-peint-blanc.jpg</pixmap>
         </property>
        </widget>
-       <zorder>label_13</zorder>
-       <zorder>SMSsent</zorder>
-       <zorder>sendSMS</zorder>
+       <widget class="QLabel" name="label_109">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>100</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>A</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="subject_2">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>129</y>
+          <width>395</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TET</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="sendMail_2">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>383</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Envoyer</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_85">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>42</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>De</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="to_2">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>100</y>
+          <width>395</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="mailsent_2">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>383</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Annuler</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="from_2">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>42</y>
+          <width>395</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>salim.maatali@esprit.tn</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_111">
+        <property name="geometry">
+         <rect>
+          <x>91</x>
+          <y>162</y>
+          <width>71</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Corps du mail</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_34">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>129</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Objet</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="paswd_2">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>71</y>
+          <width>395</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="inputMask">
+         <string/>
+        </property>
+        <property name="text">
+         <string>221JMT0498</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="msg_2">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>163</y>
+          <width>391</width>
+          <height>211</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_41">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>71</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Mot de passe</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">
@@ -899,37 +1040,175 @@
        <zorder>statsnbr_etudiants</zorder>
        <zorder>stats_budget</zorder>
       </widget>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tab_4">
        <attribute name="title">
         <string>Historique</string>
        </attribute>
-       <widget class="QLabel" name="label_15">
+       <widget class="QTextBrowser" name="Histo">
         <property name="geometry">
          <rect>
-          <x>-20</x>
-          <y>-20</y>
-          <width>1051</width>
-          <height>631</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../Downloads/fond-texture-mur-peint-blanc.jpg</pixmap>
-        </property>
-       </widget>
-       <widget class="QTableView" name="tab_historique">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>891</width>
-          <height>401</height>
+          <x>70</x>
+          <y>30</y>
+          <width>691</width>
+          <height>371</height>
          </rect>
         </property>
        </widget>
       </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Arduino</string>
+     </attribute>
+     <widget class="QLineEdit" name="lineEdit_numero1">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>60</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableViewcoofre">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>130</y>
+        <width>441</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>200</number>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>200</number>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>100</number>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>100</number>
+      </attribute>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>40</y>
+        <width>20</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_eta_coffre">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>90</y>
+        <width>47</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>200</y>
+        <width>201</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>fermer coffre</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="rec">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Rcevoir les donnees</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>42</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ouvrir</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>120</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ETAT Moteur</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>60</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>NUMERO</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_eta_moteur">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>120</y>
+        <width>47</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>90</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ETAT COFFRE</string>
+      </property>
      </widget>
     </widget>
    </widget>

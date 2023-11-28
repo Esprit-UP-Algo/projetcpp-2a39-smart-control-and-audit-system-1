@@ -1,0 +1,11 @@
+
+
+
+mar. nov. 21 06:41:40 2023 - Un client a été ajouté avec l'ID 1919 par  salim
+mar. nov. 21 06:42:45 2023 - Un client a été supprimé avec la id 548 par  salim
+mar. nov. 21 06:42:52 2023 - Un client a été supprimé avec la id 12555 par  salim
+mar. nov. 21 06:43:04 2023 - Un client a été supprimé avec la id 125573 par  salim
+mar. nov. 21 06:43:25 2023 - Un client a été modifié avec la id 1971 par  salim
+mar. nov. 21 15:33:07 2023 - Un client a été ajouté avec l'ID 5525 par  salim
+mar. nov. 21 15:33:51 2023 - Un client a été supprimé avec la id 1971 par  salim
+mar. nov. 21 15:34:09 2023 - Un client a été modifié avec la id 5525 par  salim

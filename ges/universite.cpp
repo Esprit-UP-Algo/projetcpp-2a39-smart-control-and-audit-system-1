@@ -2,8 +2,7 @@
 #include <QSqlQuery>
 #include<QtDebug>
 #include<QObject>
-
-
+#include <QSqlError>
 
 
 universite::universite()
@@ -29,41 +28,23 @@ void universite::setdate_visite(QDate date_visite){this->date_visite=date_visite
 void universite::setbudget_annuel(float budget_annuel){this->budget_annuel=budget_annuel;}
 
 
-bool universite::ajouter_universite() {
+bool universite::ajouter_universite()
+{
     QString id_string = QString::number(id);
-    QString nb_etudiants_string = QString::number(nb_etudiants);
-    QString budget_annuel_string = QString::number(budget_annuel);
-
+       QString nb_etudiants_string = QString::number(nb_etudiants);
+       QString budget_annuel_string = QString::number(budget_annuel);
     QSqlQuery query;
-    QSqlQuery historiqueQuery; // Créez une requête pour la table "historique"
+   query.prepare("INSERT INTO UNIVERSITE (id, nom, adresse, nb_etudiants, date_visite, budget_annuel) "
+                             "VALUES (:id, :nom, :adresse, :nb_etudiants, :date_visite, :budget_annuel)");
+               query.bindValue(0, id_string);
+               query.bindValue(1, nom);
+               query.bindValue(2, adresse);
+               query.bindValue(3, nb_etudiants_string);
+               query.bindValue(4, date_visite);
+               query.bindValue(5, budget_annuel_string);
 
-    query.prepare("INSERT INTO UNIVERSITE (id, nom, adresse, nb_etudiants, date_visite, budget_annuel) "
-                  "VALUES (:id, :nom, :adresse, :nb_etudiants, :date_visite, :budget_annuel)");
-    query.bindValue(":id", id_string);
-    query.bindValue(":nom", nom);
-    query.bindValue(":adresse", adresse);
-    query.bindValue(":nb_etudiants", nb_etudiants_string);
-    query.bindValue(":date_visite", date_visite);
-    query.bindValue(":budget_annuel", budget_annuel_string);
-
-    bool success = query.exec();
-
-    if (success) {
-
-        historiqueQuery.prepare("INSERT INTO HISTORIQUE (id, nom, adresse, nb_etudiants, date_visite, budget_annuel) "
-                               "VALUES (:id, :nom, :adresse, :nb_etudiants, :date_visite, :budget_annuel)");
-        historiqueQuery.bindValue(":id", id_string);
-        historiqueQuery.bindValue(":nom", nom);
-        historiqueQuery.bindValue(":adresse", adresse);
-        historiqueQuery.bindValue(":nb_etudiants", nb_etudiants_string);
-        historiqueQuery.bindValue(":date_visite", date_visite);
-        historiqueQuery.bindValue(":budget_annuel", budget_annuel_string);
-
-        success = historiqueQuery.exec();
+            return query.exec();
     }
-
-    return success;
-}
 
 
 
@@ -73,6 +54,9 @@ QString id_string = QString::number(id);
 query.prepare("Delete FROM universite where id=:id");
 query.bindValue(0, id);
 return query.exec();}
+
+
+
 
 
 
@@ -133,22 +117,6 @@ query.bindValue(":date_visite",date_visite);
 query.bindValue(":budget_annuel",budget_string);
 return query.exec();}
 
-QSqlQueryModel * universite::rechercher(QString nom)
-{
-QSqlQueryModel * model= new QSqlQueryModel();
-
-model->setQuery("SELECT * FROM universite WHERE  nom LIKE '%"+nom+"%'" );
-
-model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
-model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom de l'université"));
-model->setHeaderData(2, Qt::Horizontal, QObject::tr("Adresse de l'université "));
-model->setHeaderData(3, Qt::Horizontal, QObject::tr("Nombre d'étudiants"));
-model->setHeaderData(4, Qt::Horizontal, QObject::tr("Date de visite"));
-model->setHeaderData(5, Qt::Horizontal, QObject::tr("Budget annuel"));
-
-return model ;
-}
-
 QSqlQueryModel *universite::tri_id()
 {
     QSqlQueryModel * model=new QSqlQueryModel();
@@ -194,5 +162,19 @@ QSqlQueryModel *universite::tri_date_visite()
     return model;
 }
 
+QSqlQueryModel *universite::rechercher(QString nom)
+{
+QSqlQueryModel * model= new QSqlQueryModel();
 
+model->setQuery("SELECT * FROM UNIVERSITE WHERE  nom LIKE '%"+nom+"%'" );
+
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom de l'université"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("Adresse de l'université"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("Nombre d'étudiants"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("Date de visite"));
+model->setHeaderData(5, Qt::Horizontal, QObject::tr("Budget annuel"));
+
+return model;
+}
 

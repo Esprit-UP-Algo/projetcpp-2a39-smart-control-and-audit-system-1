@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QDate>
+#include <QSqlError>
 
 
 
@@ -41,6 +42,8 @@ QSqlQueryModel* rechercher(QString);
 QSqlQueryModel * tri_id() ;
 QSqlQueryModel * tri_adresse() ;
 QSqlQueryModel * tri_date_visite() ;
+
+
 
 
 
