@@ -24,20 +24,60 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>20</y>
       <width>1181</width>
-      <height>501</height>
+      <height>521</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+     <string notr="true">#QWidget {
+    background-color: rgb(173, 216, 230); /* Light Blue */
+}
+
+QTabWidget::pane {
+    border-top: 5px solid #8A2BE2; /* Violet */
+}
+
+QTabWidget::tab-bar {
+    left: 0px;
+}
+
+QTabBar::tab {
+    background-color: rgb(173, 216, 230); /* Light Blue */
+    border: 2px solid #8A2BE2; /* Violet */
+    border-bottom-color: #8A2BE2;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    min-width: 120px;
+    padding: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font: italic 10pt &quot;Elephant&quot;;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background-color: rgb(138, 43, 226); /* Violet */
+    color: rgb(255, 255, 255);
+}
+
+QTabBar::tab:selected {
+    border-color: #9B9B9B;
+    border-bottom-color: #8A2BE2;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font: italic 10pt &quot;Elephant&quot;;
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px;
+}</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
-      <string>Les details de Certificat</string>
+      <string> details de Certificat</string>
      </attribute>
      <widget class="QPushButton" name="pushButton_ajouter_2">
       <property name="geometry">
@@ -218,12 +258,12 @@ QPushButton:active {
        <string>Exporter</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_imprimer">
+     <widget class="QPushButton" name="pushButton_imprimers">
       <property name="geometry">
        <rect>
-        <x>560</x>
+        <x>540</x>
         <y>410</y>
-        <width>151</width>
+        <width>171</width>
         <height>41</height>
        </rect>
       </property>
@@ -530,7 +570,7 @@ QPushButton:active {
        <rect>
         <x>940</x>
         <y>20</y>
-        <width>121</width>
+        <width>131</width>
         <height>41</height>
        </rect>
       </property>
@@ -568,13 +608,29 @@ QPushButton:active {
        <string>Refresher</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="label_19">
       <property name="geometry">
        <rect>
-        <x>-4</x>
-        <y>-27</y>
-        <width>1251</width>
-        <height>501</height>
+        <x>-20</x>
+        <y>0</y>
+        <width>1201</width>
+        <height>561</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="res.qrc">:/new/prefix1/res/bg_test.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_COFFRE">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>410</y>
+        <width>161</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -608,18 +664,19 @@ QPushButton:active {
 </string>
       </property>
       <property name="text">
-       <string/>
+       <string>Coffre</string>
       </property>
-      <property name="pixmap">
-       <pixmap resource="img.qrc">:/new/prefix1/bg_test.png</pixmap>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/print.png</normaloff>../icons/print.png</iconset>
       </property>
      </widget>
-     <zorder>label_8</zorder>
+     <zorder>label_19</zorder>
      <zorder>pushButton_ajouter_2</zorder>
      <zorder>pushButton_supp</zorder>
      <zorder>pushButton_trier</zorder>
      <zorder>pushButton_exporter</zorder>
-     <zorder>pushButton_imprimer</zorder>
+     <zorder>pushButton_imprimers</zorder>
      <zorder>tableView_main_interface</zorder>
      <zorder>pushButton_calendrier</zorder>
      <zorder>pushButton_Update_2</zorder>
@@ -628,6 +685,7 @@ QPushButton:active {
      <zorder>lineEdit_rechercher_num</zorder>
      <zorder>pushButton_rechercher</zorder>
      <zorder>pushButton_retourner</zorder>
+     <zorder>pushButton_COFFRE</zorder>
     </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -887,33 +945,12 @@ QPushButton:active {
        <rect>
         <x>420</x>
         <y>20</y>
-        <width>661</width>
+        <width>571</width>
         <height>381</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QTableView {
-    background-color: #ffffff ; /* Couleur de fond de la table */
-    border: 3px solid #ddd; /* Bordure de la table */
-}
-
-QTableView QHeaderView::section {
-    background-color: 	#1E90FF; /* Couleur de fond de l'en-tête */
-    color: white; /* Couleur du texte de l'en-tête */
-    font-weight: FERTIGO PRO; /* Style de la police de l'en-tête */
-    border: 3px solid #ddd; /* Bordure de l'en-tête */
-}
-
-QTableView::item {
-    background-color: #ffffff; /* Couleur de fond des cellules */
-    color: #333; /* Couleur du texte des cellules */
-}
-
-QTableView::item:selected {
-    background-color: #3498db; /* Couleur de fond de la cellule sélectionnée */
-    color: white; /* Couleur du texte de la cellule sélectionnée */
-}
-</string>
+       <string notr="true"/>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_ajouter">
@@ -1066,9 +1103,62 @@ QPushButton:active {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="img.qrc">:/new/prefix1/bg_test.png</pixmap>
+       <pixmap>:/new/prefix1/bg_test.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>-10</y>
+        <width>1211</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="res.qrc">:/new/prefix1/res/bg_test.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="QR">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>190</y>
+        <width>111</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_QR">
+      <property name="geometry">
+       <rect>
+        <x>1020</x>
+        <y>60</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="graphicsView_2">
+      <property name="geometry">
+       <rect>
+        <x>1000</x>
+        <y>180</y>
+        <width>161</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+     <zorder>label_21</zorder>
      <zorder>label_12</zorder>
      <zorder>label</zorder>
      <zorder>label_2</zorder>
@@ -1090,6 +1180,9 @@ QPushButton:active {
      <zorder>pushButton_ajouter</zorder>
      <zorder>pushButton_Update</zorder>
      <zorder>pushButton_retournouvelle</zorder>
+     <zorder>QR</zorder>
+     <zorder>pushButton_QR</zorder>
+     <zorder>graphicsView_2</zorder>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -1214,14 +1307,75 @@ QPushButton:active {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="img.qrc">:/new/prefix1/bg_test.png</pixmap>
+       <pixmap>:/new/prefix1/bg_test.png</pixmap>
       </property>
      </widget>
+     <widget class="QPushButton" name="rechercher">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>420</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+
+QPushButton {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:20px;
+	border:3px solid  #8a2be2;;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+QPushButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+QPushButton:active {
+	position:relative;
+	top:1px;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>rechercher</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>-74</x>
+        <y>-37</y>
+        <width>1251</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="res.qrc">:/new/prefix1/res/bg_test.png</pixmap>
+      </property>
+     </widget>
+     <zorder>label_22</zorder>
      <zorder>label_15</zorder>
      <zorder>calendarWidget</zorder>
      <zorder>tableView_note</zorder>
      <zorder>pushButton_enregistrer</zorder>
      <zorder>pushButton_retourcal2</zorder>
+     <zorder>rechercher</zorder>
     </widget>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
@@ -1432,9 +1586,26 @@ QPushButton:active {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="img.qrc">:/new/prefix1/bg_test.png</pixmap>
+       <pixmap>:/new/prefix1/bg_test.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>-40</x>
+        <y>-40</y>
+        <width>1761</width>
+        <height>771</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="res.qrc">:/new/prefix1/res/bg_test.png</pixmap>
+      </property>
+     </widget>
+     <zorder>label_23</zorder>
      <zorder>label_16</zorder>
      <zorder>graphicsView</zorder>
      <zorder>pushButton_statistique</zorder>
@@ -1642,9 +1813,26 @@ QPushButton:active {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="img.qrc">:/new/prefix1/bg_test.png</pixmap>
+       <pixmap>:/new/prefix1/bg_test.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>-40</x>
+        <y>-50</y>
+        <width>1821</width>
+        <height>781</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="res.qrc">:/new/prefix1/res/bg_test.png</pixmap>
+      </property>
+     </widget>
+     <zorder>label_24</zorder>
      <zorder>label_18</zorder>
      <zorder>widget_camera_view</zorder>
      <zorder>pushButton_start_cam</zorder>
@@ -1661,33 +1849,38 @@ QPushButton:active {
        <rect>
         <x>780</x>
         <y>70</y>
-        <width>151</width>
+        <width>211</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">
+
 QPushButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-decoration: none;
-  color: #3E00FF;
-  font-size: 11px;
-  border-radius: 0px;
-  width: 100px;
-  height: 40px;
-  border-top: 1px solid #3E00FF;
-  border-right: 1px solid #3E00FF;
-  border-left: 20px solid #3E00FF;
-  border-bottom: 1px solid #3E00FF;
-  transition: 0.3s;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:20px;
+	border:3px solid  #8a2be2;;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+QPushButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+QPushButton:active {
+	position:relative;
+	top:1px;
 }
 
-QPushButton:hover {
-  border-left-width: 1px;
-}
 </string>
       </property>
       <property name="text">
@@ -1699,33 +1892,38 @@ QPushButton:hover {
        <rect>
         <x>780</x>
         <y>170</y>
-        <width>151</width>
+        <width>211</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">
+
 QPushButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-decoration: none;
-  color: #3E00FF;
-  font-size: 11px;
-  border-radius: 0px;
-  width: 100px;
-  height: 40px;
-  border-top: 1px solid #3E00FF;
-  border-right: 1px solid #3E00FF;
-  border-left: 20px solid #3E00FF;
-  border-bottom: 1px solid #3E00FF;
-  transition: 0.3s;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:20px;
+	border:3px solid  #8a2be2;;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+QPushButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+QPushButton:active {
+	position:relative;
+	top:1px;
 }
 
-QPushButton:hover {
-  border-left-width: 1px;
-}
 </string>
       </property>
       <property name="text">
@@ -1738,7 +1936,7 @@ QPushButton:hover {
         <x>770</x>
         <y>260</y>
         <width>111</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -1811,33 +2009,38 @@ QPushButton:hover {
        <rect>
         <x>780</x>
         <y>120</y>
-        <width>151</width>
+        <width>211</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">
+
 QPushButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-decoration: none;
-  color: #3E00FF;
-  font-size: 11px;
-  border-radius: 0px;
-  width: 100px;
-  height: 40px;
-  border-top: 1px solid #3E00FF;
-  border-right: 1px solid #3E00FF;
-  border-left: 20px solid #3E00FF;
-  border-bottom: 1px solid #3E00FF;
-  transition: 0.3s;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:20px;
+	border:3px solid  #8a2be2;;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+QPushButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+QPushButton:active {
+	position:relative;
+	top:1px;
 }
 
-QPushButton:hover {
-  border-left-width: 1px;
-}
 </string>
       </property>
       <property name="text">
@@ -1909,9 +2112,26 @@ QPushButton:hover {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="img.qrc">:/new/prefix1/bg_test.png</pixmap>
+       <pixmap>:/new/prefix1/bg_test.png</pixmap>
       </property>
      </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>-80</x>
+        <y>-100</y>
+        <width>1871</width>
+        <height>821</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="res.qrc">:/new/prefix1/res/bg_test.png</pixmap>
+      </property>
+     </widget>
+     <zorder>label_25</zorder>
      <zorder>label_17</zorder>
      <zorder>pushButton</zorder>
      <zorder>pushButton_2</zorder>
@@ -1926,6 +2146,65 @@ QPushButton:hover {
      <zorder>label_9</zorder>
      <zorder>label_12id</zorder>
     </widget>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>550</y>
+      <width>47</width>
+      <height>14</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>-200</x>
+      <y>590</y>
+      <width>391</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+
+QPushButton {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:20px;
+	border:3px solid  #8a2be2;;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+QPushButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+QPushButton:active {
+	position:relative;
+	top:1px;
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/new/prefix1/bg_test.png</pixmap>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar">
@@ -1958,7 +2237,7 @@ QPushButton:hover {
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="img.qrc"/>
+  <include location="res.qrc"/>
  </resources>
  <connections/>
 </ui>

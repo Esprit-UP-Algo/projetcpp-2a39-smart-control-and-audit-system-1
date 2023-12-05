@@ -53,6 +53,7 @@ QSqlQueryModel * affichercoffre();
 bool ajouteretatcoffreclosed( int numero);
 bool verifierExistence(int value);
 void writelas();
+QSqlQueryModel * afficherDATE();
 
 };
 

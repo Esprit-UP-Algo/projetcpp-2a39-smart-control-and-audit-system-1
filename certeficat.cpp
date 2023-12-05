@@ -153,7 +153,18 @@ bool Certificat::verifierExistence(int value)
         return false;
     }
 }
+QSqlQueryModel *Certificat::afficherDATE()
+{
 
+  QSqlQueryModel *model=new QSqlQueryModel();
+  model->setQuery("select * from EVENT ");
+  model->setHeaderData(0,Qt::Horizontal,QObject::tr("NOTE"));
+  model->setHeaderData(1,Qt::Horizontal,QObject::tr("DATE"));
+
+
+
+ return model;
+}
 
 
 

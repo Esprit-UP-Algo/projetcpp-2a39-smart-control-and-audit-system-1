@@ -50,6 +50,11 @@
 #include <utility>
 #include <QLabel>
 #include "arduino.h"
+#include "qrcode.h"
+#include <fstream>
+#include <QtSvg/QSvgRenderer>
+#include "qrcodegen.h"
+
 interface_certeficat::interface_certeficat(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::interface_certeficat)
@@ -64,10 +69,11 @@ interface_certeficat::interface_certeficat(QWidget *parent)
     M_Camera_Image.reset(new QCameraImageCapture(M_Camera.data()));
     M_Camera_Image->setCaptureDestination((QCameraImageCapture::CaptureToFile));
     connect(M_Camera_Image.data(), &QCameraImageCapture::imageCaptured, this, &interface_certeficat::imageCaptured );
-
+    ui->tableView_note->setModel(Etmp.afficherDATE());
     ui->tableView_main_interface->setModel(Etmp.afficher());
     ui->tableView_main_interface2->setModel(Etmp.afficher());
     ui->tableViewcoofre->setModel(Etmp.affichercoffre());
+    ui->tableView_note->setModel(Etmp.afficherDATE());
     int ret=A.connect_arduino(); // lancer la connexion à arduino
     switch(ret){
     case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
@@ -78,7 +84,6 @@ interface_certeficat::interface_certeficat(QWidget *parent)
     }
      QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
      //le slot update_label suite à la reception du signal readyRead (reception des données).
-
 
 
 }
@@ -418,79 +423,85 @@ void interface_certeficat::on_pushButton_scanne_clicked()
 
 void interface_certeficat::on_pushButton_exporter_clicked()
 {
-    QString filePath = QFileDialog::getSaveFileName(nullptr, "Exporter le tableau au format PDF", "", "Fichiers PDF (*.pdf)");//permet de sélectionner des fichiers ou des répertoires
-//filepath:stock le chemain de fichier
-    //getSaveFileName:choisir un emplacement et un nom ll fichier
-          if (filePath.isEmpty())
+    QString strStream;
+      QTextStream out(&strStream);
+
+      const int rowCount = ui->tableView_main_interface->model()->rowCount();
+      const int columnCount = ui->tableView_main_interface->model()->columnCount();
+
+      // HTML header
+      out << "<html>\n"
+             "<head>\n"
+             "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+             "<style type=\"text/css\">\n"
+             "table {\n"
+             "    border-collapse: collapse;\n"
+             "    width: 100%;\n"
+             "}\n"
+             "th, td {\n"
+             "    border: 1px solid #dddddd;\n"
+             "    text-align: left;\n"
+             "    padding: 8px;\n"
+             "}\n"
+             "th {\n"
+             "    background-color: #f2f2f2;\n"
+             "}\n"
+             "</style>\n"
+             << QString("<title>%1</title>\n").arg("strTitle")
+             << "</head>\n"
+             "<body bgcolor=#ffffff link=#5000A0>\n"
+             "<center> <H1>TABLE DES CERTIFICATS </H1></br></br>\n";
+
+      QDateTime currentDateTime = QDateTime::currentDateTime();
+      out << QString("<p>Date d'exportation : %1</p>\n").arg(currentDateTime.toString());
+
+      out << "<table>\n";
+
+      out << "<thead><tr>";
+      out << "<th>Numero</th>";
+      for (int column = 0; column < columnCount; column++)
+      {
+          if (!ui->tableView_main_interface->isColumnHidden(column))
           {
-              return;
+              out << QString("<th>%1</th>").arg(ui->tableView_main_interface->model()->headerData(column, Qt::Horizontal).toString());
           }
+      }
+      out << "</tr></thead>\n";
 
-          QPrinter printer(QPrinter::PrinterResolution); //QPrinter besh l qt yaaref eli enty une imprimente virtuelle
-          printer.setOutputFormat(QPrinter::PdfFormat); //besh yaaref eli l format fl sortie type taa3ou PDF
-          printer.setOutputFileName(filePath);//besh yaaref chemain
-          printer.setPageSize(QPrinter::Tabloid);//thaded taille taa l page
-
-
-          QPainter painter(&printer);//ay haj amarssouma besh natb3ouha bl machine virtuelle
-          painter.setRenderHint(QPainter::Antialiasing);//tech graphidue besh l bord ywaliw plus lisse
-          painter.setRenderHint(QPainter::TextAntialiasing);//les contours de caractere plus lisses
-          painter.setRenderHint(QPainter::HighQualityAntialiasing);//ll qualite
-          painter.setRenderHint(QPainter::SmoothPixmapTransform);//améliore la qualité du rendu des images ki ne9elbouha wela ay faaza
-
-
-
-            QFont titleFont;
-          titleFont.setBold(true);
-          titleFont.setPixelSize(20);
-          painter.setFont(titleFont);
-
-          QRect titleRect(50, 50, printer.width() - 100, 30);
-          painter.drawText(titleRect, Qt::AlignCenter, "Titre du tableau");
-
-          // Ajouter la date d'exportation
-          QFont dateFont;
-          dateFont.setPixelSize(12);
-          painter.setFont(dateFont);
-
-          QDateTime currentDate = QDateTime::currentDateTime();
-          QString exportDate = "Date d'exportation: " + currentDate.toString("dd.MM.yyyy hh:mm:ss");
-
-          QRect dateRect(50, 80, printer.width() - 100, 20);
-          painter.drawText(dateRect, Qt::AlignCenter, exportDate);
-
-          QAbstractItemModel* originalModel = ui->tableView_main_interface->model();//recuperer un pointeur vers la table ppour acceder au donnes actuelle de la table
-          QString originalStylesheet = ui->tableView_main_interface->styleSheet();//recuperer une feuille sur qt
-          QSize originalSize = ui->tableView_main_interface->size();//TAILLE DE LA TABLE X,Y taille bidemonsionnelle
-
-          QStandardItemModel model;
-
-          model.setHorizontalHeaderLabels({"NUMERO", "REFERENTIEL", "DOMAINE", "VALIDITE", "DATE_VALIDITE_DEBUT","SIGNIATAIRE" ,"DATE_VALIDITE_FIN"});
-
-          int rowCount = originalModel->rowCount();//pour obtenir le nombre de ligne
-          int columnCount = originalModel->columnCount();//nombre de colonnes
-          for (int row = 0; row < rowCount; ++row)
+      for (int row = 0; row < rowCount; row++)
+      {
+          out << "<tr>";
+          out << "<td>" << row + 1 << "</td>";
+          for (int column = 0; column < columnCount; column++)
           {
-              QList<QStandardItem*> rowData;//l kol ligne nakhel9ou rowdata nesstokio fih les donnes taa ligne
-              for (int col = 0; col < columnCount-1; ++col)
+              if (!ui->tableView_main_interface->isColumnHidden(column))
               {
-                  QStandardItem* item = new QStandardItem(originalModel->data(originalModel->index(row, col)).toString());//nesstokiw led donner eli fi col row yaani mither (2.3) w nrodouhom des chaines de caractere
-                  rowData.append(item);
+                  QString data = ui->tableView_main_interface->model()->data(ui->tableView_main_interface->model()->index(row, column)).toString().simplified();
+                  out << QString("<td>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
               }
-              model.appendRow(rowData);
           }
+          out << "</tr>\n";
+      }
 
-          ui->tableView_main_interface->setModel(&model);//laffichage de noubelle model
+      out << "</table></center>\n"
+             "</body>\n"
+             "</html>\n";
 
-          ui->tableView_main_interface->resize(printer.width(), printer.height());//besh nhafedh aal led dimensions
+      QString fileName = QFileDialog::getSaveFileName((QWidget *)0, "Sauvegarder en PDF", QString(), "*.pdf");
+      if (QFileInfo(fileName).suffix().isEmpty())
+      {
+          fileName.append(".pdf");
+      }
 
-          ui->tableView_main_interface->render(&painter);//besh nhawlou mn tabel l pdf
+      QPrinter printer(QPrinter::PrinterResolution);
+      printer.setOutputFormat(QPrinter::PdfFormat);
+      printer.setPaperSize(QPrinter::A4);
+      printer.setOutputFileName(fileName);
 
-          ui->tableView_main_interface->setModel(originalModel);// baaed l imrimentatioon nraj3ou l table
-          ui->tableView_main_interface->setStyleSheet(originalStylesheet);// revenir à l'apparence visuelle initiale de la table.
-          ui->tableView_main_interface->resize(originalSize);//dimensions d'origine après le processus d'impression.
-
-          painter.end();
+      QTextDocument doc;
+      doc.setHtml(strStream);
+      doc.setPageSize(printer.pageRect().size());
+      doc.print(&printer);
 }
 
 
@@ -599,7 +610,11 @@ void interface_certeficat::on_tableView_main_interface2_activated(const QModelIn
 
 void interface_certeficat::on_pushButton_calendrier_clicked()
 {
- ui->tabWidget->setCurrentIndex(2);
+
+on_rechercher_clicked();
+ui->tabWidget->setCurrentIndex(2);
+
+
 }
 
 
@@ -777,178 +792,103 @@ void interface_certeficat::on_pushButton_statistique_clicked()
 }
 
 
-void interface_certeficat::on_calendarWidget_clicked(const QDate &date)
+
+
+void interface_certeficat::on_rechercher_clicked()
 {
-    {
-        // Demander à l'utilisateur d'ajouter une note
-        bool ok;
-        QString note = QInputDialog::getText(this, "Ajouter une note", "Entrez une note :", QLineEdit::Normal, "", &ok);
+    QString result = checkDataForCurrentDate();  // Assuming checkDataForCurrentDate is a member function
 
-        // Si l'utilisateur clique sur "OK", afficher un message avec la note
-        if (ok && !note.isEmpty())
-        {
-            QString message = QString("Note ajoutée le %1 : %2").arg(date.toString("dd/MM/yyyy")).arg(note);
-            QMessageBox::information(this, "Note ajoutée", message);
-
-            // Stocker la note dans la liste des notes
-            NoteEntry entry;
-            entry.date = date;
-            entry.note = note;
-            notes.append(entry);
-
-            // Rafraîchir les info-bulles pour prendre en compte la nouvelle note
-            on_calendarWidget_selectionChanged();
-        }
-    }
+       // Display the result in a QMessageBox
+       QMessageBox::information(this, "EVENEMENT RESULTAT", result);
 }
-
-void interface_certeficat::on_calendarWidget_selectionChanged()
-{        // Reuse the existing model or create a new one if needed
-    QStandardItemModel *model = qobject_cast<QStandardItemModel*>(ui->tableView_note->model());
-    if (!model) {
-        model = new QStandardItemModel(this);
-        model->setHorizontalHeaderLabels(QStringList() << "Date" << "Note");
-    } else {
-        // Clear the existing table if the model is being reused
-    }
-
-    // La date sélectionnée dans le calendrier
-    QDate selectedDate = ui->calendarWidget->selectedDate();
-
-    // Liste pour stocker toutes les notes associées à la date sélectionnée
-    QList<NoteEntry> selectedNotes;
-
-    // Remplir la liste des notes associées à la date sélectionnée
-    foreach (const NoteEntry &entry, notes) {
-        if (selectedDate == entry.date) {
-            selectedNotes.append(entry);
-        }
-    }
-
-    // Ajouter les notes à la table
-    foreach (const NoteEntry &entry, selectedNotes) {
-        QList<QStandardItem *> rowItems;
-        rowItems.append(new QStandardItem(entry.date.toString("dd/MM/yyyy")));
-        rowItems.append(new QStandardItem(entry.note));
-        model->appendRow(rowItems);
-    }
-
-    // Définir le modèle pour le tableau
-    ui->tableView_note->setModel(model);
-
-    // Effacer l'info-bulle
-    ui->calendarWidget->setToolTip("");
-
-
-}
-
 
 void interface_certeficat::on_pushButton_enregistrer_clicked()
 {
-    QStandardItemModel *model = qobject_cast<QStandardItemModel*>(ui->tableView_note->model());
-
-       // Check if the model exists
-       if (!model) {
-           qDebug() << "No model available for export.";
-           return;
-       }
-
-       // Ask the user to choose a file path
-       QString filePath = QFileDialog::getSaveFileName(this, tr("Export Table to TXT"), "", tr("Text Files (*.txt);;All Files (*)"));
-       if (filePath.isEmpty()) {
-           qDebug() << "Export canceled or no file selected.";
-           return;
-       }
-
-       // Open the file for writing
-       QFile file(filePath);
-       if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-           QTextStream out(&file);
-
-           // Write headers to the file
-           QStringList headers;
-           headers << "#" << "Date" << "***"<<"Note";  // Added a column for row numbers
-           out << headers.join('\t') << '\n';
-
-           // Write data to the file
-           for (int row = 0; row < model->rowCount(); ++row) {
-               QStringList rowData;
-
-               // Add row number
-               rowData << QString::number(row + 1);
-
-               for (int column = 0; column < model->columnCount(); ++column) {
-                   // Get the data for each cell
-                   QString data = model->item(row, column)->text();
-                   rowData << data;
-               }
-               out << rowData.join('\t') << '\n';
-           }
-
-           // Close the file
-           file.close();
-           qDebug() << "Export successful. File saved at:" << filePath;
-       } else {
-           qDebug() << "Failed to open the file for export:" << file.errorString();
-       }
+    interface_certeficat c;
+    c.checkDataForCurrentDate();
 }
 
 void interface_certeficat::on_pushButton_exp_stat_clicked()
 {
-    QString filePath = QFileDialog::getSaveFileName(nullptr, "Exporter le tableau au format PDF", "", "Fichiers PDF (*.pdf)");//permet de sélectionner des fichiers ou des répertoires
-//filepath:stock le chemain de fichier
-    //getSaveFileName:choisir un emplacement et un nom ll fichier
-          if (filePath.isEmpty())
+    QString strStream;
+      QTextStream out(&strStream);
+
+      const int rowCount = ui->tableView_Resultat->model()->rowCount();
+      const int columnCount = ui->tableView_Resultat->model()->columnCount();
+
+      // HTML header
+      out << "<html>\n"
+             "<head>\n"
+             "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+             "<style type=\"text/css\">\n"
+             "table {\n"
+             "    border-collapse: collapse;\n"
+             "    width: 100%;\n"
+             "}\n"
+             "th, td {\n"
+             "    border: 1px solid #dddddd;\n"
+             "    text-align: left;\n"
+             "    padding: 8px;\n"
+             "}\n"
+             "th {\n"
+             "    background-color: #f2f2f2;\n"
+             "}\n"
+             "</style>\n"
+             << QString("<title>%1</title>\n").arg("strTitle")
+             << "</head>\n"
+             "<body bgcolor=#ffffff link=#5000A0>\n"
+             "<center> <H1>Statistique Table </H1></br></br>\n";
+
+      QDateTime currentDateTime = QDateTime::currentDateTime();
+      out << QString("<p>Date d'exportation : %1</p>\n").arg(currentDateTime.toString());
+
+      out << "<table>\n";
+
+      out << "<thead><tr>";
+      out << "<th>Numero</th>";
+      for (int column = 0; column < columnCount; column++)
+      {
+          if (!ui->tableView_Resultat->isColumnHidden(column))
           {
-              return;
+              out << QString("<th>%1</th>").arg(ui->tableView_Resultat->model()->headerData(column, Qt::Horizontal).toString());
           }
+      }
+      out << "</tr></thead>\n";
 
-          QPrinter printer(QPrinter::PrinterResolution); //QPrinter besh l qt yaaref eli enty une imprimente virtuelle
-          printer.setOutputFormat(QPrinter::PdfFormat); //besh yaaref eli l format fl sortie type taa3ou PDF
-          printer.setOutputFileName(filePath);//besh yaaref chemain
-          printer.setPageSize(QPrinter::Tabloid);//thaded taille taa l page
-
-
-          QPainter painter(&printer);//ay haj amarssouma besh natb3ouha bl machine virtuelle
-          painter.setRenderHint(QPainter::Antialiasing);//tech graphidue besh l bord ywaliw plus lisse
-          painter.setRenderHint(QPainter::TextAntialiasing);//les contours de caractere plus lisses
-          painter.setRenderHint(QPainter::HighQualityAntialiasing);//ll qualite
-          painter.setRenderHint(QPainter::SmoothPixmapTransform);//améliore la qualité du rendu des images ki ne9elbouha wela ay faaza
-
-
-          QAbstractItemModel* originalModel = ui->tableView_Resultat->model();//recuperer un pointeur vers la table ppour acceder au donnes actuelle de la table
-          QString originalStylesheet = ui->tableView_Resultat->styleSheet();//recuperer une feuille sur qt
-          QSize originalSize = ui->tableView_Resultat->size();//TAILLE DE LA TABLE X,Y taille bidemonsionnelle
-
-          QStandardItemModel model;
-
-          model.setHorizontalHeaderLabels({"MOIS", "NOMBRE CERTEFICAT/MOIS", "POURCENTAGE"});
-
-          int rowCount = originalModel->rowCount();//pour obtenir le nombre de ligne
-          int columnCount = originalModel->columnCount();//nombre de colonnes
-          for (int row = 0; row < rowCount; ++row)
+      for (int row = 0; row < rowCount; row++)
+      {
+          out << "<tr>";
+          out << "<td>" << row + 1 << "</td>";
+          for (int column = 0; column < columnCount; column++)
           {
-              QList<QStandardItem*> rowData;//l kol ligne nakhel9ou rowdata nesstokio fih les donnes taa ligne
-              for (int col = 0; col < columnCount; ++col)
+              if (!ui->tableView_Resultat->isColumnHidden(column))
               {
-                  QStandardItem* item = new QStandardItem(originalModel->data(originalModel->index(row, col)).toString());//nesstokiw led donner eli fi col row yaani mither (2.3) w nrodouhom des chaines de caractere
-                  rowData.append(item);
+                  QString data = ui->tableView_Resultat->model()->data(ui->tableView_Resultat->model()->index(row, column)).toString().simplified();
+                  out << QString("<td>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
               }
-              model.appendRow(rowData);
           }
+          out << "</tr>\n";
+      }
 
-          ui->tableView_Resultat->setModel(&model);//laffichage de noubelle model
+      out << "</table></center>\n"
+             "</body>\n"
+             "</html>\n";
 
-          ui->tableView_Resultat->resize(printer.width(), printer.height());//besh nhafedh aal led dimensions
+      QString fileName = QFileDialog::getSaveFileName((QWidget *)0, "Sauvegarder en PDF", QString(), "*.pdf");
+      if (QFileInfo(fileName).suffix().isEmpty())
+      {
+          fileName.append(".pdf");
+      }
 
-          ui->tableView_Resultat->render(&painter);//besh nhawlou mn tabel l pdf
+      QPrinter printer(QPrinter::PrinterResolution);
+      printer.setOutputFormat(QPrinter::PdfFormat);
+      printer.setPaperSize(QPrinter::A4);
+      printer.setOutputFileName(fileName);
 
-          ui->tableView_Resultat->setModel(originalModel);// baaed l imrimentatioon nraj3ou l table
-          ui->tableView_Resultat->setStyleSheet(originalStylesheet);// revenir à l'apparence visuelle initiale de la table.
-          ui->tableView_Resultat->resize(originalSize);//dimensions d'origine après le processus d'impression.
-
-
-          painter.end();
+      QTextDocument doc;
+      doc.setHtml(strStream);
+      doc.setPageSize(printer.pageRect().size());
+      doc.print(&printer);
 }
 
 void interface_certeficat::on_pushButton_retournouvelle_clicked()
@@ -1052,7 +992,6 @@ void interface_certeficat::zidlas()
 void interface_certeficat::on_pushButton_2_clicked()
 {
 
-       // Affichage de "Enter password" sur l'afficheur LCD
        A.write_to_arduino("2");
 
 
@@ -1070,5 +1009,214 @@ void interface_certeficat::on_pushButton_4_clicked()
     A.write_to_arduino("4");
 
 
+
+}
+void interface_certeficat::on_calendarWidget_clicked(const QDate &date)
+{
+    bool ok;
+    QString note = QInputDialog::getText(this, "Ajouter une note", "Entrez une note :", QLineEdit::Normal, "", &ok);
+
+    qDebug() << note;
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO EVENT (DATEE, NOTE) VALUES (:date, :note)");
+    query.bindValue(":date", date.toString("yyyy-MM-dd"));
+    query.bindValue(":note", note);
+
+    if (query.exec())
+    {
+        qDebug() << "Note inserted into the database";
+    }
+    else
+    {
+        qDebug() << "Error inserting note into the database:" << query.lastError().text();
+    }
+
+    // Refresh the notes for the selected date
+    on_calendarWidget_selectionChanged();
+}
+
+void interface_certeficat::on_calendarWidget_selectionChanged()
+{
+    // Reuse the existing model or create a new one if needed
+    QStandardItemModel *model = qobject_cast<QStandardItemModel*>(ui->tableView_note->model());
+    if (!model)
+    {
+        model = new QStandardItemModel(this);
+        model->setHorizontalHeaderLabels(QStringList() << "Date" << "Note");
+    }
+    else
+    {
+        model->removeRows(0, model->rowCount());  // Clear the existing table if the model is being reused
+    }
+
+    // Get the selected date from the calendar
+    QDate selectedDate = ui->calendarWidget->selectedDate();
+
+    QSqlQuery query;
+    query.prepare("SELECT * FROM EVENT WHERE DATEE = :date");
+    query.bindValue(":date", selectedDate.toString("yyyy-MM-dd"));
+
+    if (query.exec())
+    {
+        while (query.next())
+        {
+            QString note = query.value("NOTE").toString();  // Corrected column name
+
+            QList<QStandardItem *> rowItems;
+            rowItems.append(new QStandardItem(selectedDate.toString("dd/MM/yyyy")));
+            rowItems.append(new QStandardItem(note));
+            model->appendRow(rowItems);
+        }
+    }
+    else
+    {
+        qDebug() << "Error retrieving notes from the database:" << query.lastError().text();
+    }
+
+    // Set the model for the table
+    ui->tableView_note->setModel(model);
+
+    // Clear the tooltip
+    ui->calendarWidget->setToolTip("");
+}
+
+QString interface_certeficat::checkDataForCurrentDate()
+{
+       QDate currentDate = QDate::currentDate();
+
+       QSqlQuery query;
+       query.prepare("SELECT COUNT(*) FROM EVENT WHERE DATEE = :date");
+       query.bindValue(":date", currentDate.toString("yyyy-MM-dd"));
+
+       if (query.exec() && query.next()) {
+           int rowCount = query.value(0).toInt();
+           qDebug() << "Rows found for the current date:" << rowCount;
+
+           QString result = "pour aujourd-hui le : " + currentDate.toString("yyyy-MM-dd") + ": le nombre des evenement est  " + QString::number(rowCount);
+           return result;
+       } else {
+           qDebug() << "Error checking data in the database:" << query.lastError().text();
+           return "Error checking data in the database: " + query.lastError().text();
+       }
+}
+
+
+
+
+
+void interface_certeficat::on_bagra_clicked()
+{
+    interface_certeficat c;
+    c.checkDataForCurrentDate();
+}
+
+void interface_certeficat::on_tabWidget_tabBarClicked(int index)
+{
+    //on_rechercher_clicked();
+}
+
+void interface_certeficat::on_tabWidget_currentChanged(int index)
+{
+    ui->tableView_main_interface->setModel(Etmp.afficher());
+    ui->tableView_main_interface2->setModel(Etmp.afficher());
+    ui->tableViewcoofre->setModel(Etmp.affichercoffre());
+    ui->tableView_note->setModel(Etmp.afficherDATE());
+    interface_certeficat::on_pushButton_statistique_clicked();
+
+}
+
+void interface_certeficat::on_push_clicked()
+{
+    QModelIndex index = ui->tableView_note->currentIndex(); // Récupérer l'index de la ligne sélectionnée dans le TableView
+    const int COLONNE_ID = 0;
+    if (index.isValid()) {
+        int row = index.row();
+
+        int idToDelete = ui->tableView_note->model()->data(ui->tableView_note->model()->index(row, COLONNE_ID)).toInt(); // Assurez-vous que COLONNE_ID est correctement défini
+
+        Certificat C2;
+        C2.setNumero(idToDelete);
+
+        if (C2.supprimer(C2.getNumero())) {
+            ui->tableView_note->setModel(Etmp.afficherDATE());
+
+
+            QMessageBox::information(nullptr, QObject::tr("OK"),
+                                   QObject::tr("evenemet supprimé.\nCliquez sur OK pour continuer"), QMessageBox::Ok);
+
+            ui->tableView_note->model()->removeRow(row);
+
+            ui->lineEdit_numero->clear();
+            ui->lineEdit_domaine->clear();
+            ui->lineEdit_validite->clear();
+            ui->lineEdit_titulaire->clear();
+            ui->lineEdit_signataire->clear();
+            ui->dateEdit_debut->clear();
+            ui->dateEdit_fin->clear();
+            ui->lineEdit_referentiel->clear();
+        } else {
+            QMessageBox::critical(nullptr, QObject::tr("ERREUR"),
+                                  QObject::tr("Échec de la suppression.\nCliquez sur OK pour continuer"), QMessageBox::Ok);
+        }
+    } else {
+
+        qDebug() << "Aucune ligne sélectionnée dans le TableView.";
+        QMessageBox::critical(nullptr, QObject::tr("ERREUR"),
+                              QObject::tr("Aucune ligne sélectionnée dans le TableView.\nCliquez sur OK pour continuer"), QMessageBox::Ok);
+    }
+}
+
+void interface_certeficat::on_pushButton_imprimers_clicked()
+{
+    QPrinter printer(QPrinter::PrinterResolution);
+       printer.setPageSize(QPrinter::A4);//thaded taille taa l page
+       // Utiliser le format natif de l'imprimante
+
+       // Afficher la boîte de dialogue d'aperçu
+       QPrintPreviewDialog previewDialog(&printer, this);
+
+       // Connecter le signal paintRequested avant d'exécuter la boîte de dialogue
+       connect(&previewDialog, SIGNAL(paintRequested(QPrinter*)), this, SLOT(print(QPrinter*)));
+
+       // Afficher la boîte de dialogue d'aperçu
+       previewDialog.showMaximized();
+
+       // Exécuter la boîte de dialogue
+       if (previewDialog.exec() == QDialog::Accepted) {
+           // Si l'utilisateur clique sur OK dans la boîte de dialogue d'aperçu, l'impression sera effectuée dans la fonction print.
+       }
+}
+
+void interface_certeficat::on_pushButton_COFFRE_clicked()
+{
+    ui->tabWidget->setCurrentIndex(5);
+
+}
+
+void interface_certeficat::on_pushButton_QR_clicked()
+{if(ui->tableView_main_interface2->currentIndex().row() == -1)
+    {
+        QMessageBox::information(nullptr, QObject::tr("QrCode"),
+                                 QObject::tr("Veuillez choisir une activité du tableau.\n"
+                                             "Cliquez sur OK pour quitter."), QMessageBox::Ok);
+    }
+    else
+    {
+        int numero = ui->tableView_main_interface2->model()->data(ui->tableView_main_interface2->model()->index(ui->tableView_main_interface2->currentIndex().row(), 0)).toInt();
+        int referentiel = ui->tableView_main_interface2->model()->data(ui->tableView_main_interface2->model()->index(ui->tableView_main_interface2->currentIndex().row(), 2)).toInt();
+        QString titulaire = ui->tableView_main_interface2->model()->data(ui->tableView_main_interface2->model()->index(ui->tableView_main_interface2->currentIndex().row(), 1)).toString();
+        QString domaine = ui->tableView_main_interface2->model()->data(ui->tableView_main_interface2->model()->index(ui->tableView_main_interface2->currentIndex().row(), 3)).toString();
+        QString validite = ui->tableView_main_interface2->model()->data(ui->tableView_main_interface2->model()->index(ui->tableView_main_interface2->currentIndex().row(), 4)).toString();
+        QString signataire = ui->tableView_main_interface2->model()->data(ui->tableView_main_interface2->model()->index(ui->tableView_main_interface2->currentIndex().row(), 5)).toString();
+        QString qrContent = QString("La certificat %1 son referentiel est %2. Son titulaire est est %3, son domaine %4, et sa validite est %5. son signiataire est %7 ")
+                                .arg(numero).arg(referentiel).arg(titulaire).arg(domaine).arg(validite).arg(signataire);  // You need to replace "genre_placeholder" with the correct variable or expression for genre.
+
+        // Convert QString to std::string
+        std::string infoQRCode = qrContent.toStdString();
+
+        // Generate and display QR Code
+        qrcodegen::showQRCode(ui->graphicsView_2, infoQRCode);
+    }
 
 }

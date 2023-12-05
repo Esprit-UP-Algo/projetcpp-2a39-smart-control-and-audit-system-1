@@ -33,6 +33,8 @@ class interface_certeficat : public QMainWindow
 public:
     interface_certeficat(QWidget *parent = nullptr);
     ~interface_certeficat();
+    void on_rechercher_clicked();
+
 
 private slots:
     void on_pushButton_ajouter_clicked();
@@ -118,7 +120,14 @@ void zidlas();
 void on_pushButton_2_clicked();
 void on_pushButton_3_clicked();
 void on_pushButton_4_clicked();
-void on_pushButton_send_clicked();
+QString  checkDataForCurrentDate();
+void on_bagra_clicked();
+void on_tabWidget_tabBarClicked(int index);
+void on_tabWidget_currentChanged(int index);
+void on_push_clicked();
+void on_pushButton_imprimers_clicked();
+void on_pushButton_COFFRE_clicked();
+void on_pushButton_QR_clicked();
 };
 
 
